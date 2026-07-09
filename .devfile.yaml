@@ -4,11 +4,10 @@ metadata:
 components:
   - name: opencode-container
     container:
-      image: registry.redhat.com/openshift-ai/odh-notebook-container:r2024a
-      command: ['tail', '-f', '/dev/null']
-      memoryLimit: 8Gi
-      cpuLimit: '2'
-      memoryRequest: 4Gi
+      image: registry.redhat.io/devspaces/udi-rhel9:3.29
+      memoryLimit: '3Gi'
+      memoryRequest: '2Gi'
+      cpuLimit: '4'
       cpuRequest: '1'
       mountSources: true
       env:
