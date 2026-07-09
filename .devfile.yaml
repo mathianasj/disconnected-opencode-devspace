@@ -1,11 +1,8 @@
 schemaVersion: 2.2.0
 metadata:
   name: opencode-devspace
-  attributes:
-    container: single
 components:
   - container:
-      name: opencode
       image: registry.redhat.com/openshift-ai/odh-notebook-container:r2024a
       command: ['tail', '-f', '/dev/null']
       memoryLimit: 8Gi
@@ -20,8 +17,8 @@ components:
         - /opt/opencode
         - /home/user/.opencode
   - kubernetes:
-      name: init-script
-      literal:
+      uri: https://raw.githubusercontent.com/mathianasj/disconnected-opencode-devspace/main/init-config.yaml
+      inlined:
         apiVersion: v1
         kind: ConfigMap
         metadata:
