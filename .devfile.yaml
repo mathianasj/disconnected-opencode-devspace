@@ -14,9 +14,6 @@ components:
       env:
         - name: OPCODE_SERVICE_URL
           value: 'http://redhataiqwen3-coder-next-nvfp4-predictor.coder.svc.cluster.local:8080/v1'
-      mountPaths:
-        - /opt/opencode
-        - /home/user/.opencode
   - name: init-script
     kubernetes:
       uri: https://raw.githubusercontent.com/mathianasj/disconnected-opencode-devspace/main/init-config.yaml
