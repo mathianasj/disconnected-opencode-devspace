@@ -13,15 +13,10 @@ components:
       env:
         - name: OPCODE_SERVICE_URL
           value: 'http://redhataiqwen3-coder-next-nvfp4-predictor.coder.svc.cluster.local:8080/v1'
-      command: ['/bin/bash', '/init.sh']
+      command: ['/bin/bash', '${PROJECTS_ROOT}/opencode-devspace/startup.sh']
       volumeMounts:
         - name: opencode-volume
           path: /home/user/.opencode
-        - name: init-volume
-          path: /opt/opencode
   - name: opencode-volume
-    volume:
-      size: 1G
-  - name: init-volume
     volume:
       size: 1G
