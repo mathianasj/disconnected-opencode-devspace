@@ -1,0 +1,7 @@
+{
+  "services": {
+    "vllm": {
+      "url": "${OPCODE_SERVICE_URL:-http://redhataiqwen3-coder-next-nvfp4-predictor.coder.svc.cluster.local:8080/v1}"
+    }
+  }
+}

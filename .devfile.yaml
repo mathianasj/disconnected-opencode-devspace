@@ -1,0 +1,21 @@
+schemaVersion: 2.2.0
+metadata:
+  name: opencode-devspace
+  attributes:
+    container: single
+components:
+  - container:
+      name: opencode
+      image: registry.redhat.com/openshift-ai/odh-notebook-container:r2024a
+      command: ['tail', '-f', '/dev/null']
+      memoryLimit: 8Gi
+      cpuLimit: '2'
+      memoryRequest: 4Gi
+      cpuRequest: '1'
+      mountSources: true
+      env:
+        - name: OPCODE_SERVICE_URL
+          value: 'http://redhataiqwen3-coder-next-nvfp4-predictor.coder.svc.cluster.local:8080/v1'
+      mountPaths:
+        - /opt/opencode
+        - /home/user/.opencode

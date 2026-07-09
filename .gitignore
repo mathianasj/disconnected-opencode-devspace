@@ -1,0 +1,7 @@
+# .devfile.yaml
+# .env
+# .opencode/opencode.json
+# README.md
+*.log
+node_modules/
+*.tmp
