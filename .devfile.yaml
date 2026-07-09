@@ -19,3 +19,18 @@ components:
       mountPaths:
         - /opt/opencode
         - /home/user/.opencode
+  - kubernetes:
+      name: init-script
+      literal:
+        apiVersion: v1
+        kind: ConfigMap
+        metadata:
+          name: init-script
+        data:
+          init.sh: |
+            #!/bin/sh
+            if ! command -v opencode &> /dev/null; then
+              echo "Installing opencode..."
+              pip install opencode
+            fi
+            echo "Opencode ready. Service URL: ${OPCODE_SERVICE_URL:-not set}"
